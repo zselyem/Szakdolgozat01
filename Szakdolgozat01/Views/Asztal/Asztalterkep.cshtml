@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Szakdolgozat01.Models.AsztalViewModel>
+@{
+    ViewBag.Title = "Asztaltérkép";
+}
+
+<h2>Asztal</h2>
+@foreach(var vm in Model)
+            {
+<div>
+    Asztalszám: @vm.Szam Név: @vm.Nev Időpont: @vm.Idopont
+</div>
+            }
+@for (int k = 0; k < 10; k++)
+{
+<div class="row">
+    @for (int j = 0; j < 3; j++)
+    {
+    <div class="col-sm-4">
+        <table class="table-bordered" id="@(j*10+k+1)">
+            <tr>
+                <td>Asztalszám</td>
+                <td>Időpont</td>
+                <td>Megjegyzés</td>
+                <td>Szerkesztés</td>
+                <td>Megérkezett</td>
+                <td>Törlés</td>
+            </tr>
+            @for (int i = 0; i < 6; i++)
+            {
+                <tr>
+                    <td>Vezetéknév Keresztnév</td>
+                    <td>óra:perc</td>
+                    <td>Megjegyzés</td>
+                    <td><img src="~/Content/Images/edit.png" /></td>
+                    <td><input type="checkbox"/>megérkezett</td>
+                    <td><img src="~/Content/Images/bin.png" /></td>
+               </tr>
+            }
+        </table>
+    </div>
+    }
+</div>
+}

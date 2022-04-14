@@ -1,0 +1,68 @@
+﻿@model IEnumerable<Szakdolgozat01.Models.FoglalasViewModel>
+@{
+    ViewBag.Title = "Foglalas";
+}
+
+<h2>Foglalas</h2>
+
+<form id="form" class="form">
+    <div class="form-control">
+        <label for="date">Időpont: </label>
+        <input type="date" min="2022-01-01" max="2022-12-31" id="date">
+    </div>
+    <div class="form-control">
+        <label for="time">Óra: </label>
+        <select name="ido" id="ido">
+            @foreach(var m in Model)
+            {
+                <option value="@m.Idopont">@m.Idopont:00</option>
+            }
+            @*<option value=11>11:00</option>
+            <option value=13>13:00</option>
+            <option value=15>15:00</option>
+            <option value=17>17:00</option>
+            <option value=19>19:00</option>
+            <option value=21>21:00</option>*@
+        </select>
+    </div>
+    <div class="form-control">
+        <label for="vezeteknev">Vezetéknév</label>
+        <input type="text" placeholder="vezetéknév" id="vezeteknev" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+    </div>
+    <div class="form-control">
+        <label for="keresztnev">Keresztnév</label>
+        <input type="text" placeholder="Keresztnév" id="keresztnev" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+    </div>
+    <div class="form-control">
+        <label for="telszam">Telefonszám</label>
+        <input type="text" placeholder="Telefonszám" id="telszam" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+    </div>
+    <div class="form-control">
+        <label for="email">Email</label>
+        <input type="text" placeholder="email" id="email" />
+        <i class="fas fa-check-circle"></i>
+        <i class="fas fa-exclamation-circle"></i>
+        <small>Error message</small>
+    </div>
+    <div class="form-control">
+        <label for="fo">Hány főre foglalsz? </label>
+        <select name="fo" id="fo">
+            <option value="1">1 fő</option>
+            <option value="2">2 fő</option>
+            <option value="3">3 fő</option>
+            <option value="4">4 fő</option>
+        </select>
+    </div>
+    <button type="submit">Küldés</button>
+</form>
+
+
