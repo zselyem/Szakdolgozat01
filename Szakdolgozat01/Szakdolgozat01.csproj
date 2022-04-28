@@ -175,9 +175,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202204272109504_adatbazis-letrehozasa.cs" />
+    <Compile Include="Migrations\202204272109504_adatbazis-letrehozasa.designer.cs">
+      <DependentUpon>202204272109504_adatbazis-letrehozasa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202204272111577_tesztadatok-feltoltese.cs" />
+    <Compile Include="Migrations\202204272111577_tesztadatok-feltoltese.designer.cs">
+      <DependentUpon>202204272111577_tesztadatok-feltoltese.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AsztalViewModel.cs" />
-    <Compile Include="Models\FoglalasViewModel.cs" />
+    <Compile Include="Models\Foglalas.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -257,6 +265,14 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202204272109504_adatbazis-letrehozasa.resx">
+      <DependentUpon>202204272109504_adatbazis-letrehozasa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202204272111577_tesztadatok-feltoltese.resx">
+      <DependentUpon>202204272111577_tesztadatok-feltoltese.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

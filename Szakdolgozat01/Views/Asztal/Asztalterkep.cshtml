@@ -1,43 +1,54 @@
-﻿@model IEnumerable<Szakdolgozat01.Models.AsztalViewModel>
+﻿@model IEnumerable<Szakdolgozat01.Models.Foglalas>
 @{
     ViewBag.Title = "Asztaltérkép";
 }
 
-<h2>Asztal</h2>
-@foreach(var vm in Model)
-            {
-<div>
-    Asztalszám: @vm.Szam Név: @vm.Nev Időpont: @vm.Idopont
-</div>
-            }
-@for (int k = 0; k < 10; k++)
-{
-<div class="row">
-    @for (int j = 0; j < 3; j++)
-    {
-    <div class="col-sm-4">
-        <table class="table-bordered" id="@(j*10+k+1)">
+<h2>Foglalasok</h2>
+<table id="foglalasok" class="table-hover col-lg-12">
+    <thead>
+        <tr>
+            <th class="col-md-3">Név</th>
+            <th>E-mail cím</th>
+            <th class="col-md-3">Telefonszám</th>
+            <th class="col-md-3">Időpont</th>
+            <th class="col-md-3">Fő</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var f in Model)
+        {
             <tr>
-                <td>Asztalszám</td>
-                <td>Időpont</td>
-                <td>Megjegyzés</td>
-                <td>Szerkesztés</td>
-                <td>Megérkezett</td>
-                <td>Törlés</td>
+                <td class="col-md-3">@f.VezetekNev @f.KeresztNev</td>
+                <td class="col-md-3">@f.Email</td>
+                <td class="col-md-3">@f.TelSzam</td>
+                <td class="col-md-3">@f.Idopont</td>
+                <td class="col-md-3">@f.Fo</td>
+                <td>
+                    <button data-foglalas-id="@f.Id" class="torles">Törlés</button>
+                </td>
             </tr>
-            @for (int i = 0; i < 6; i++)
-            {
-                <tr>
-                    <td>Vezetéknév Keresztnév</td>
-                    <td>óra:perc</td>
-                    <td>Megjegyzés</td>
-                    <td><img src="~/Content/Images/edit.png" /></td>
-                    <td><input type="checkbox"/>megérkezett</td>
-                    <td><img src="~/Content/Images/bin.png" /></td>
-               </tr>
-            }
-        </table>
-    </div>
-    }
-</div>
+        }
+    </tbody>
+</table>
+
+
+@section scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $("#foglalasok .js-delete").on("click", function () {
+                var btn = $(this);
+                if (confirm("Biztosan törölni szereténd a foglalást?")) {
+                    $.ajax({
+                        url: "/Asztal/Asztalterkep/" + btn.attr("data-foglalas-id"),
+                        method: "DELETE",
+                        success: function () {
+                            btn.parents("tr").remove();
+                        }
+                    });
+                }
+            });
+        });
+    </script>
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Szakdolgozat01.Models.FoglalasViewModel>
+﻿
 @{
     ViewBag.Title = "Foglalas";
 }
@@ -13,16 +13,16 @@
     <div class="form-control">
         <label for="time">Óra: </label>
         <select name="ido" id="ido">
-            @foreach(var m in Model)
+            @*@foreach(var m in Model)
             {
                 <option value="@m.Idopont">@m.Idopont:00</option>
-            }
-            @*<option value=11>11:00</option>
+            }*@
+            <option value=11>11:00</option>
             <option value=13>13:00</option>
             <option value=15>15:00</option>
             <option value=17>17:00</option>
             <option value=19>19:00</option>
-            <option value=21>21:00</option>*@
+            <option value=21>21:00</option>
         </select>
     </div>
     <div class="form-control">
@@ -60,6 +60,8 @@
             <option value="2">2 fő</option>
             <option value="3">3 fő</option>
             <option value="4">4 fő</option>
+            <option value="5">5 fő</option>
+            <option value="6">6 fő</option>
         </select>
     </div>
     <button type="submit">Küldés</button>
