@@ -17,12 +17,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Szakdolgozat", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Asztalfoglalós program", "Foglalas", "Asztal", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Foglalás","Foglalas","Asztal")</li>
                     <li>@Html.ActionLink("Asztaltérkép", "Asztalterkep", "Asztal")</li>
                 </ul>
@@ -34,7 +32,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - A gyönyörűséges szakdolgozatom(unk).</p>
+            <p>&copy; @DateTime.Now.Year - Aszztalfoglalós program</p>
         </footer>
     </div>
 

@@ -1,9 +1,9 @@
-﻿
+﻿@model Szakdolgozat01.Models.Foglalas
 @{
     ViewBag.Title = "Foglalas";
 }
 
-<h2>Foglalas</h2>
+<h2>Foglalás</h2>
 
 <form id="form" class="form">
     <div class="form-control">
@@ -13,10 +13,6 @@
     <div class="form-control">
         <label for="time">Óra: </label>
         <select name="ido" id="ido">
-            @*@foreach(var m in Model)
-            {
-                <option value="@m.Idopont">@m.Idopont:00</option>
-            }*@
             <option value=11>11:00</option>
             <option value=13>13:00</option>
             <option value=15>15:00</option>
@@ -27,31 +23,22 @@
     </div>
     <div class="form-control">
         <label for="vezeteknev">Vezetéknév</label>
-        <input type="text" placeholder="vezetéknév" id="vezeteknev" />
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error message</small>
+        <input type="text" placeholder="Vezetéknév" id="vezeteknev" />
     </div>
     <div class="form-control">
         <label for="keresztnev">Keresztnév</label>
         <input type="text" placeholder="Keresztnév" id="keresztnev" />
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error message</small>
+        
     </div>
     <div class="form-control">
         <label for="telszam">Telefonszám</label>
         <input type="text" placeholder="Telefonszám" id="telszam" />
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error message</small>
+        
     </div>
     <div class="form-control">
         <label for="email">Email</label>
-        <input type="text" placeholder="email" id="email" />
-        <i class="fas fa-check-circle"></i>
-        <i class="fas fa-exclamation-circle"></i>
-        <small>Error message</small>
+        <input type="text" placeholder="E-mail" id="email" />
+        
     </div>
     <div class="form-control">
         <label for="fo">Hány főre foglalsz? </label>
